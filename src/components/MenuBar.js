@@ -13,21 +13,31 @@ const MenuBar = (props) => {
 
   */
 
+
+  const isActive=(itemName)=>{
+    console.log([props.selected, itemName])
+    return itemName === props.selected ? 'item active':'item'
+  }
+
   return (
     <div className="ui four item menu">
-      <a className="item active" id="profile">
+      <a onClick={props.handleClick}
+      className={isActive('profile')} id="profile">
         <i className="user large icon" id="profile"/>
       </a>
 
-      <a className="item" id="photo">
+      <a  onClick={props.handleClick}
+      className={isActive('photo')} id="photo">
         <i className="photo large icon" id="photo"/>
       </a>
 
-      <a className="item" id="cocktail">
+      <a onClick={props.handleClick} 
+      className={isActive('cocktail')} id="cocktail">
         <i className="cocktail large icon" id="cocktail"/>
       </a>
 
-      <a className="item" id="pokemon"> 
+      <a onClick={props.handleClick} 
+      className={isActive('pokemon')} id="pokemon"> 
         <i className=" themeisle large icon" id="pokemon"/>
       </a>
     </div>
